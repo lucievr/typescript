@@ -1,11 +1,13 @@
-import { Sortable } from './Sorter';
+import { Sorter } from './Sorter';
 
-export class NumbersCollection implements Sortable {
+export class NumbersCollection extends Sorter {
   // data: number[];
   // constructor(data: number[]) {
   //   this.data = data;
   // }
-  constructor(public data: number[]) {} // alternative syntax to the above
+  constructor(public data: number[]) { // alternative syntax to the above
+    super(); // to ensure the constructor of parent class Sorter gets implemented
+  }
 
   // getter/accesor - to access property length, not called as a func but e.g. as newCollection.length
   get length(): number {
